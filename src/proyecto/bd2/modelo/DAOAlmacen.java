@@ -21,7 +21,7 @@ public class DAOAlmacen {
     
 //primera operacion
       
-    public static void guardar(Almacen almacen) throws Exception{
+    public  void guardar(Almacen almacen) throws Exception{
         Connection con=Conexion.conectarse();
         
         CallableStatement callate=con.prepareCall("{call guardar_almacen(?,?)}");
@@ -37,6 +37,10 @@ public class DAOAlmacen {
         // return pk;
     }
    
-   
+public  void buscarPorId (Almacen almacen) throws Exception{
+    Connection con=Conexion.conectarse();
+    
+    CallableStatement cs=con.prepareCall("{}");
+}   
     
 }

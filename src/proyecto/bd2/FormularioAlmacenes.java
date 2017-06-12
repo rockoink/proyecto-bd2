@@ -5,6 +5,8 @@
  */
 package proyecto.bd2;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author T-
@@ -32,13 +34,37 @@ public class FormularioAlmacenes extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel5 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        textoNumeroAlmacen = new javax.swing.JTextField();
+        textoUbicacionAlmacen = new javax.swing.JTextField();
+        guardarAlmacen = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
+        jTabbedPane4 = new javax.swing.JTabbedPane();
+        jTabbedPane5 = new javax.swing.JTabbedPane();
+        jTabbedPane6 = new javax.swing.JTabbedPane();
+        jTabbedPane7 = new javax.swing.JTabbedPane();
+        jTabbedPane8 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
+        jTabbedPane9 = new javax.swing.JTabbedPane();
+        jTabbedPane10 = new javax.swing.JTabbedPane();
+        jTabbedPane11 = new javax.swing.JTabbedPane();
+        jTabbedPane12 = new javax.swing.JTabbedPane();
+        jTabbedPane13 = new javax.swing.JTabbedPane();
+        jTabbedPane14 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
+        jTabbedPane15 = new javax.swing.JTabbedPane();
+        jTabbedPane16 = new javax.swing.JTabbedPane();
+        jTabbedPane17 = new javax.swing.JTabbedPane();
+        jTabbedPane18 = new javax.swing.JTabbedPane();
+        jTabbedPane19 = new javax.swing.JTabbedPane();
+        jTabbedPane20 = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,15 +72,51 @@ public class FormularioAlmacenes extends javax.swing.JFrame {
 
         jTabbedPane2.setTabPlacement(javax.swing.JTabbedPane.LEFT);
 
+        jLabel2.setText("numero de almacen");
+
+        jLabel3.setText("ubicacion almacen");
+
+        guardarAlmacen.setText("guardar");
+        guardarAlmacen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarAlmacenActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
+                        .addGap(55, 55, 55)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textoUbicacionAlmacen, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textoNumeroAlmacen, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(guardarAlmacen)))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 245, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(textoNumeroAlmacen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3)
+                    .addComponent(textoUbicacionAlmacen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addComponent(guardarAlmacen)
+                .addGap(44, 44, 44))
         );
 
         jTabbedPane2.addTab("guardar", jPanel5);
@@ -63,7 +125,7 @@ public class FormularioAlmacenes extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
+            .addGap(0, 355, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -76,7 +138,7 @@ public class FormularioAlmacenes extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
+            .addGap(0, 355, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,7 +151,7 @@ public class FormularioAlmacenes extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
+            .addGap(0, 355, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,7 +164,7 @@ public class FormularioAlmacenes extends javax.swing.JFrame {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
+            .addGap(0, 355, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,41 +186,75 @@ public class FormularioAlmacenes extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("almacen", jPanel1);
 
+        jTabbedPane3.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+
+        jTabbedPane4.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        jTabbedPane3.addTab("guardar", jTabbedPane4);
+        jTabbedPane3.addTab("actualizar", jTabbedPane5);
+        jTabbedPane3.addTab("borrar", jTabbedPane6);
+        jTabbedPane3.addTab("buscar por id", jTabbedPane7);
+        jTabbedPane3.addTab("buscar todos", jTabbedPane8);
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 433, Short.MAX_VALUE)
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 250, Short.MAX_VALUE)
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("vendedor", jPanel2);
+
+        jTabbedPane9.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        jTabbedPane9.addTab("guardar", jTabbedPane10);
+        jTabbedPane9.addTab("actualizar", jTabbedPane11);
+        jTabbedPane9.addTab("borrar", jTabbedPane12);
+        jTabbedPane9.addTab("buscar por id", jTabbedPane13);
+        jTabbedPane9.addTab("buscaar todos", jTabbedPane14);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 433, Short.MAX_VALUE)
+            .addComponent(jTabbedPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 250, Short.MAX_VALUE)
+            .addComponent(jTabbedPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("cliente", jPanel3);
+
+        jTabbedPane15.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        jTabbedPane15.addTab("guardar", jTabbedPane16);
+        jTabbedPane15.addTab("actualizar", jTabbedPane17);
+        jTabbedPane15.addTab("borrar", jTabbedPane18);
+        jTabbedPane15.addTab("buscar por id", jTabbedPane19);
+        jTabbedPane15.addTab("buscar todos", jTabbedPane20);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 433, Short.MAX_VALUE)
+            .addComponent(jTabbedPane15, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 250, Short.MAX_VALUE)
+            .addComponent(jTabbedPane15, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("ventas", jPanel4);
@@ -184,6 +280,30 @@ public class FormularioAlmacenes extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void guardarAlmacenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarAlmacenActionPerformed
+        // TODO add your handling code here:
+        int numeroAlmacen=Integer.parseInt(textoNumeroAlmacen.getText());
+        String ubicacionAlmacen=textoUbicacionAlmacen.getText();
+        
+        Almacen almacen=new Almacen(numeroAlmacen,ubicacionAlmacen);
+        DAOAlmacen daoAlmacen=new DAOAlmacen();
+                try{
+             
+            
+          int pk=  daoAlmacen.guardar(almacen);
+          JOptionPane.showConfirmDialog(this, "almacen guardado");
+
+          //etiquetaResultado.setText("Se guardo con id "+pk);
+            
+        }catch(Exception e){
+            JOptionPane.showConfirmDialog(this, ex.getMessage);
+
+            //etiquetaResultado.setText(e.getMessage());
+        }
+
+        
+    }//GEN-LAST:event_guardarAlmacenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -221,8 +341,12 @@ public class FormularioAlmacenes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton guardarAlmacen;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -232,6 +356,26 @@ public class FormularioAlmacenes extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane10;
+    private javax.swing.JTabbedPane jTabbedPane11;
+    private javax.swing.JTabbedPane jTabbedPane12;
+    private javax.swing.JTabbedPane jTabbedPane13;
+    private javax.swing.JTabbedPane jTabbedPane14;
+    private javax.swing.JTabbedPane jTabbedPane15;
+    private javax.swing.JTabbedPane jTabbedPane16;
+    private javax.swing.JTabbedPane jTabbedPane17;
+    private javax.swing.JTabbedPane jTabbedPane18;
+    private javax.swing.JTabbedPane jTabbedPane19;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTabbedPane jTabbedPane20;
+    private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JTabbedPane jTabbedPane4;
+    private javax.swing.JTabbedPane jTabbedPane5;
+    private javax.swing.JTabbedPane jTabbedPane6;
+    private javax.swing.JTabbedPane jTabbedPane7;
+    private javax.swing.JTabbedPane jTabbedPane8;
+    private javax.swing.JTabbedPane jTabbedPane9;
+    private javax.swing.JTextField textoNumeroAlmacen;
+    private javax.swing.JTextField textoUbicacionAlmacen;
     // End of variables declaration//GEN-END:variables
 }
