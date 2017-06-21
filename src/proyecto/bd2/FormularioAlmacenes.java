@@ -41,6 +41,9 @@ public class FormularioAlmacenes extends javax.swing.JFrame {
         guardarAlmacen = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
+        textoId = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        botonBorrar = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -136,15 +139,40 @@ public class FormularioAlmacenes extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("actualizar", jPanel6);
 
+        jLabel4.setText("Id");
+
+        botonBorrar.setText("Borrar");
+        botonBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonBorrarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 355, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jLabel4)
+                .addGap(40, 40, 40)
+                .addComponent(textoId, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(176, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botonBorrar)
+                .addGap(114, 114, 114))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 245, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textoId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(89, 89, 89)
+                .addComponent(botonBorrar)
+                .addContainerGap(275, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("borrar", jPanel7);
@@ -325,6 +353,23 @@ public class FormularioAlmacenes extends javax.swing.JFrame {
         
     }//GEN-LAST:event_guardarAlmacenActionPerformed
 
+    private void botonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBorrarActionPerformed
+
+int id=Integer.parseInt(textoId.getText());
+
+Almacen almacen=new Almacen(numeroAlmacen,UbicacionAlmacen);
+DAOAlmacen daoAlmacen=new DAOAlmacen ();
+
+try{
+    daoAlmacen.Borrar(almacen);
+}catch (Exception ex) {
+            
+            JOptionPane.showConfirmDialog(this, ex.getMessage());
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonBorrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -361,10 +406,12 @@ public class FormularioAlmacenes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonBorrar;
     private javax.swing.JButton guardarAlmacen;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
@@ -397,6 +444,7 @@ public class FormularioAlmacenes extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane8;
     private javax.swing.JTabbedPane jTabbedPane9;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField textoId;
     private javax.swing.JTextField textoNumeroAlmacen;
     private javax.swing.JTextField textoUbicacionAlmacen;
     // End of variables declaration//GEN-END:variables

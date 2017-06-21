@@ -15,6 +15,9 @@ import java.util.*;
  * @author T-
  */
 public class DAOAlmacen {
+    public DAOAlmacen(){
+        
+    }
     
     //debil(metodo), moderado(atributo), fuerte(herencia)
   
@@ -22,8 +25,10 @@ public class DAOAlmacen {
     
 //primera operacion
       
-    public  void guardar(Almacen almacen) throws Exception{
+    public static  void guardar(Almacen almacen) throws Exception{
         Connection con=Conexion.conectarse();
+        
+        try{
         
         CallableStatement callate=con.prepareCall("{call guardar_almacen(?,?)}");
        //este es para registrar uno  callate.registerOutParameter(1,java.sql.Types.INTEGER);
@@ -34,40 +39,82 @@ public class DAOAlmacen {
         // int pk=callate.getInt(1);
         System.out.println("Se guardo el almacen");
         //cerrar conexion, para evitar saturar la memoria 
+        callate.close();
+        }catch(Exception e){
+            
+        }
+        finally{
         con.close();
         // return pk;
     }
-   
+    }
     //actualizar --- update con procedimiento almacenado
-    public  void actualizar(Almacen almacen) throws Exception{
-        Connection con=Conexion.conectarse();
+    
+    
+    public static void actualizar(Almacen almacen) throws Exception{
+        Connection con=null;
+        CallableStatement callate=null;
+        try{
+            con = Conexion.conectarse();
         
-        CallableStatement callate=con.prepareCall("{call actualizar_almacen(?,?)}");
+        callate=con.prepareCall("{call actualizar_almacen(?,?)}");
        //este es para registrar uno  callate.registerOutParameter(1,java.sql.Types.INTEGER);
         callate.setInt(1, almacen.getNumeroAlmacen());
         callate.setString(2,almacen.getUbicacionAlmacen());
 
-        callate.execute();
+        callate.executeUpdate();
+        callate.close();
         // int pk=callate.getInt(1);
         System.out.println("Se actualizo el almacen");
+        }catch(Exception e){
+            System.out.println("se genero esta excepcion" + e.getMessage());
+        }
+        finally{
         //cerrar conexion, para evitar saturar la memoria 
         con.close();
+        callate.close();
         // return pk;
     }
+    }
     
+public static Almacen buscarPorId (Integer id) throws Exception{
+   
+    Almacen almacen=new Almacen();
+      Connection con=  Conexion.conectarse();
+            
+             try{
+             
+   Statement st= con.createStatement();
+ ResultSet res=st.executeQuery("SELECT * FROM ALMACEN WHERE NUMERO_ALMACEN="+id);
+ while(res.next()){
+   Integer numeroAlmacen=  res.getInt(1);
+   String nombreAlmacen=res.getString(2);
+   almacen.setNumeroAlmacen(numeroAlmacen);
+   almacen.setUbicacionAlmacen(nombreAlmacen);
+
+   
+     }
+             }catch(Exception e){
+                 
+             }finally{
+                  con.close();
+             }
+
+ return almacen;
+  }
     
-public  void buscarPorId (Almacen almacen) throws Exception{
-    Connection con=Conexion.conectarse();
-    
-    CallableStatement cs=con.prepareCall("{}");
-}   
-    
+
+
+
+
+
 // sigue el select * from almacen
 public static ArrayList<Almacen> buscarTodos() throws Exception{
     //paso 1 generamos el arraylist que contendra la tabla
     ArrayList<Almacen> tablitaAlmacen=new ArrayList<>();
     //paso 2 creamos la conexion
     Connection con=Conexion.conectarse();
+    try {
     // creamos un statement el cual es un objeto que nos permite
     //hacer un statement de sql
     Statement st= con.createStatement();
@@ -87,8 +134,27 @@ public static ArrayList<Almacen> buscarTodos() throws Exception{
        //y ya logramos nuestro objetivo
        tablitaAlmacen.add(almacen);
     }    
+    }catch (Exception e){
+        
+    }finally {
     con.close();
+    }
     return tablitaAlmacen;
 }
+
+public static void Borrar (Integer id) throws Exception{
+    Connection con = Conexion.conectarse();
+    try{
+        Statement st=con.createStatement();
+        st.execute("DELETE * FROM ALMACEN WHERE NUMERO_ALMACEN ="+id);
+        System.out.println("se ha eliminado el usuario");
+    }catch (Exception e){
+        System.out.println("no se han eliminda" + e.getMessage());
+        
+    }finally{
+        con.close();
+    }
+}
+
 
 }
