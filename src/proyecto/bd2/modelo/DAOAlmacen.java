@@ -144,14 +144,17 @@ public static ArrayList<Almacen> buscarTodos() throws Exception{
 
 public static void Borrar (Integer id) throws Exception{
     Connection con = Conexion.conectarse();
+    Statement st=con.createStatement();
     try{
-        Statement st=con.createStatement();
+        
+        
         st.execute("DELETE * FROM ALMACEN WHERE NUMERO_ALMACEN ="+id);
         System.out.println("se ha eliminado el usuario");
     }catch (Exception e){
         System.out.println("no se han eliminda" + e.getMessage());
         
     }finally{
+        st.close();
         con.close();
     }
 }

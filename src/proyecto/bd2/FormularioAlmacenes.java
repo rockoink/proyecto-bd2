@@ -6,6 +6,8 @@
 package proyecto.bd2;
 
 import javax.swing.JOptionPane;
+import proyecto.bd2.modelo.Almacen;
+import proyecto.bd2.modelo.DAOAlmacen;
 
 /**
  *
@@ -216,7 +218,15 @@ public class FormularioAlmacenes extends javax.swing.JFrame {
             new String [] {
                 "numero Almacen", "ubicacion Almacen"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jTabbedPane2.addTab("tab6", jScrollPane1);
@@ -339,13 +349,13 @@ public class FormularioAlmacenes extends javax.swing.JFrame {
                 try{
              
             
-          int pk=  daoAlmacen.guardar(almacen);
+          /*int pk=*/  daoAlmacen.guardar(almacen);
           JOptionPane.showConfirmDialog(this, "almacen guardado");
 
           //etiquetaResultado.setText("Se guardo con id "+pk);
             
         }catch(Exception e){
-            JOptionPane.showConfirmDialog(this, ex.getMessage);
+            JOptionPane.showConfirmDialog(this, e.getMessage());
 
             //etiquetaResultado.setText(e.getMessage());
         }
@@ -357,11 +367,13 @@ public class FormularioAlmacenes extends javax.swing.JFrame {
 
 int id=Integer.parseInt(textoId.getText());
 
-Almacen almacen=new Almacen(numeroAlmacen,UbicacionAlmacen);
+
 DAOAlmacen daoAlmacen=new DAOAlmacen ();
+Almacen almacen = new Almacen();
 
 try{
-    daoAlmacen.Borrar(almacen);
+    
+    daoAlmacen.Borrar(id);
 }catch (Exception ex) {
             
             JOptionPane.showConfirmDialog(this, ex.getMessage());
